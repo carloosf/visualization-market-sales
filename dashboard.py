@@ -10,10 +10,8 @@ df["Month"] = df["Date"].apply(lambda x: str(x.year) + "-" + str(x.month))
 month = st.sidebar.selectbox("Mês", df["Month"].unique())
 df_filtered = df[df["Month"] == month] 
 
-
 col1, col2 = st.columns(2)
 col3, col4, col5 = st.columns(3)
-
 
 #Faturamento por dia em Unidade
 fig_date = px.bar(df_filtered, x="Date", y="Total", color="City", title="Faturamento por dia")
